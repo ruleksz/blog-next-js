@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const dynamic = "force-dynamic";
 
 export default async function BlogList() {
@@ -26,12 +28,9 @@ export default async function BlogList() {
                         <div className="p-4">
                             <h2 className="text-xl font-semibold mb-2 line-clamp-2">{item.title}</h2>
                             <p className="text-gray-600 text-sm line-clamp-3 mb-3">{item.content.slice(0, 120)}...</p>
-                            <a
-                                href={`/blog/${item.slug}`}
-                                className="text-blue-600 hover:underline text-sm"
-                            >
-                                Baca Selengkapnya →
-                            </a>
+                            <Link href={`/blog/${item.slug}`} className="text-blue-600">
+                                Baca Selengkapnya
+                            </Link>
                         </div>
                     </div>
                 ))}
