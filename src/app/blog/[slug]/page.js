@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const dynamic = "force-dynamic";
 
 export default async function Page({ params }) {
@@ -13,9 +15,9 @@ export default async function Page({ params }) {
 
     return (
         <main className="max-w-3xl mx-auto px-4 py-6">
-            <a href="/blog" className="mb-8 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+            <Link href={`/blog`} className="mb-8 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                 ← Kembali ke Daftar Berita
-            </a>
+            </Link>
             {post.image && (
                 <img
                     src={`http://localhost:8000${post.image}`}
